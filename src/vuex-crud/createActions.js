@@ -241,8 +241,7 @@ const createActions = ({
           .then((res) => {
             const parsedResponse = parseSingle(res);
 
-            commit('destroySuccess', id, parsedResponse);
-
+            commit('destroySuccess', {id: id, response: parsedResponse});
             return parsedResponse;
           })
           .catch((err) => {
